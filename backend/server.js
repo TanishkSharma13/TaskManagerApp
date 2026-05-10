@@ -19,11 +19,9 @@ connectDB();
 // Middlewares
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://task-manager-eight-beryl.vercel.app",
-    ],
-    credentials: true,
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   }),
 );
 
