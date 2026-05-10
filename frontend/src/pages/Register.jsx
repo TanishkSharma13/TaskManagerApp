@@ -32,7 +32,9 @@ const Register = () => {
       alert("Registration successful");
       navigate("/login");
     } catch (error) {
-      alert(error.response?.data?.message || "Registration failed");
+      console.log(error.response);
+
+      alert(error.response?.data?.message || error.message);
     } finally {
       setLoading(false);
     }
